@@ -1,0 +1,405 @@
+CREATE TABLE MEMBER (
+    id INT,
+    name VARCHAR(255),
+    age INT,
+    height DECIMAL(5, 2),
+    weight DECIMAL(5, 2),
+    dateofjoin DATE,
+    phone VARCHAR(15),
+    email VARCHAR(255),
+    address VARCHAR(500)
+);
+
+CREATE TABLE user_session (
+    user_id VARCHAR2(10),
+    session_id VARCHAR2(100)
+);
+
+CREATE TABLE Membership (
+    membership_id VARCHAR2(10),
+    membership_name VARCHAR2(20),
+    period number(2),
+    amount number(5,2)
+);
+
+
+SELECT * FROM attendance WHERE attendance_date >= TO_DATE('2023-08-15', 'YYYY-MM-DD') AND attendance_date <= TO_DATE('2023-08-16', 'YYYY-MM-DD');
+
+
+CREATE TABLE profile (
+    date_done DATE,
+    session_time TIMESTAMP,
+    member_id NUMBER(7),
+    workout_1 VARCHAR2(10),
+     workout_2 VARCHAR2(10),
+ workout_3 VARCHAR2(10),
+ workout_4 VARCHAR2(10),
+ workout_5 VARCHAR2(10),
+ workout_6 VARCHAR2(10),
+ workout_7 VARCHAR2(10)
+);
+
+
+CREATE TABLE ATTENDANCE (
+    id NUMBER(7),
+    name VARCHAR2(50),
+    attendance_date DATE,
+    in_time TIMESTAMP,
+    out_time TIMESTAMP
+);
+
+CREATE TABLE Part (
+    part_id VARCHAR2(10),
+    part_name VARCHAR2(50)
+);
+
+-- Sample data for Part table
+INSERT INTO Part (part_id, part_name)
+VALUES ('P01', 'Lat'), ('P02', 'Shoulder'), ('P03', 'Squat'),
+       ('P04', 'Bicep'), ('P05', 'Tricep'), ('P06', 'Abs');
+
+
+
+
+
+CREATE TABLE Lat(
+    workout_id VARCHAR2(10),
+    part_id VARCHAR2(10),
+    name VARCHAR2(100)
+);
+CREATE TABLE Shoulder(
+    workout_id VARCHAR2(10),
+    part_id VARCHAR2(10),
+    name VARCHAR2(100)
+);
+CREATE TABLE Workouts (
+    workout_id VARCHAR2(10),
+    part_id VARCHAR2(10),
+    name VARCHAR2(100)   
+);
+INSERT INTO Part (part_id, part_name)
+VALUES ('CH', 'CHEST');
+INSERT INTO Part (part_id, part_name)
+VALUES ('AB', 'ABS');
+INSERT INTO Part (part_id, part_name)
+VALUES ('LT', 'LAT');
+INSERT INTO Part (part_id, part_name)
+VALUES ('SH', 'SHOULDER');
+INSERT INTO Part (part_id, part_name)
+VALUES ('TRI', 'TRICEPS');
+INSERT INTO Part (part_id, part_name)
+VALUES ('BI', 'BICEPS');
+INSERT INTO Part (part_id, part_name)
+VALUES ('SQ', 'SQUAT');
+
+-- Insert 25 abs exercises
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A1', 'AB', 'Crunches');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A2', 'AB', 'Leg Raises');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A3', 'AB', 'Plank');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A4', 'AB', 'Russian Twists');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A5', 'AB', 'Bicycle Crunches');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A6', 'AB', 'Hanging Leg Raises');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A7', 'AB', 'Mountain Climbers');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A8', 'AB', 'Reverse Crunches');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A9', 'AB', 'Flutter Kicks');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A10', 'AB', 'Side Plank');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A11', 'AB', 'Sit-ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A12', 'AB', 'V-ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A13', 'AB', 'Dead Bug');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A14', 'AB', 'Toe Touches');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A15', 'AB', 'Windshield Wipers');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A16', 'AB', 'Dragon Flags');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A17', 'AB', 'Lying Leg Raises');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A18', 'AB', 'Hollow Body Hold');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A19', 'AB', 'Plank Jacks');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A20', 'AB', 'Seated Russian Twists');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A21', 'AB', 'Scissor Kicks');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A22', 'AB', 'Incline Bench Leg Raises');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A23', 'AB', 'Knee Tucks');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A24', 'AB', 'Medicine Ball Sit-ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('A25', 'AB', 'Oblique Crunches');
+
+-- Insert 25 biceps workouts
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B1', 'BI', 'Barbell Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B2', 'BI', 'Dumbbell Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B3', 'BI', 'Preacher Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B4', 'BI', 'Hammer Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B5', 'BI', 'Concentration Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B6', 'BI', 'EZ-Bar Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B7', 'BI', 'Incline Dumbbell Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B8', 'BI', 'Cable Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B9', 'BI', 'Spider Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B10', 'BI', 'Reverse Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B11', 'BI', 'Zottman Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B12', 'BI', '21s');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B13', 'BI', 'Cross Body Hammer Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B14', 'BI', 'Cable Hammer Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B15', 'BI', 'Wide-Grip Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B16', 'BI', 'Narrow-Grip Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B17', 'BI', 'Drag Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B18', 'BI', 'Machine Bicep Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B19', 'BI', 'Seated Alternating Dumbbell Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B20', 'BI', 'Kettlebell Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B21', 'BI', 'Hammer Curl Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B22', 'BI', 'Incline Hammer Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B23', 'BI', 'Alternating Incline Dumbbell Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B24', 'BI', 'Scott Curl');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('B25', 'BI', 'Seated Preacher Curl');
+
+-- Insert 25 triceps workouts
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T1', 'TR', 'Close-Grip Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T2', 'TR', 'Tricep Dips');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T3', 'TR', 'Skull Crushers');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T4', 'TR', 'Tricep Pushdowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T5', 'TR', 'Overhead Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T6', 'TR', 'Tricep Kickbacks');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T7', 'TR', 'Diamond Push-Ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T8', 'TR', 'Close-Grip Push-Ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T9', 'TR', 'Cable Rope Overhead Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T10', 'TR', 'Bench Dips');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T11', 'TR', 'Tricep Bench Press Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T12', 'TR', 'Behind-the-Back Cable Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T13', 'TR', 'Close-Grip Dumbbell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T14', 'TR', 'Single-Arm Cable Pushdowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T15', 'TR', 'Lying Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T16', 'TR', 'V-Bar Tricep Pushdown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T17', 'TR', 'Tricep Rope Pushdown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T18', 'TR', 'Reverse Grip Tricep Pushdown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T19', 'TR', 'Bench Tricep Dips');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T20', 'TR', 'Overhead Dumbbell Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T21', 'TR', 'One-Arm Dumbbell Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T22', 'TR', 'Tricep Pushdown Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T23', 'TR', 'Incline Tricep Extension');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T24', 'TR', 'Tricep Kickbacks Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('T25', 'TR', 'Dumbbell Skull Crushers');
+
+-- Insert 25 squat workouts
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S1', 'SQ', 'Barbell Back Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S2', 'SQ', 'Front Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S3', 'SQ', 'Goblet Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S4', 'SQ', 'Sumo Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S5', 'SQ', 'Hack Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S6', 'SQ', 'Bulgarian Split Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S7', 'SQ', 'Pistol Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S8', 'SQ', 'Zercher Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S9', 'SQ', 'Overhead Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S10', 'SQ', 'Box Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S11', 'SQ', 'Smith Machine Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S12', 'SQ', 'Sissy Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S13', 'SQ', 'Belt Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S14', 'SQ', 'Zercher Good Morning Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S15', 'SQ', 'Landmine Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S16', 'SQ', 'Single Leg Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S17', 'SQ', 'Pulse Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S18', 'SQ', 'Cossack Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S19', 'SQ', 'Barbell Step-up');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S20', 'SQ', 'Banded Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S21', 'SQ', 'Smith Machine Hack Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S22', 'SQ', 'Dumbbell Goblet Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S23', 'SQ', 'Dumbbell Bulgarian Split Squat');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S24', 'SQ', 'Dumbbell Box Step-up');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S25', 'SQ', 'Dumbbell Lunges');
+
+
+-- Insert sample chest workouts
+-- Insert 25 chest workouts
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C1', 'CH', 'Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C2', 'CH', 'Incline Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C3', 'CH', 'Decline Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C4', 'CH', 'Dumbbell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C5', 'CH', 'Incline Dumbbell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C6', 'CH', 'Decline Dumbbell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C7', 'CH', 'Chest Flyes');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C8', 'CH', 'Incline Chest Flyes');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C9', 'CH', 'Pec Deck Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C10', 'CH', 'Cable Crossovers');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C11', 'CH', 'Push-Ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C12', 'CH', 'Dips');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C13', 'CH', 'Close-Grip Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C14', 'CH', 'Wide-Grip Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C15', 'CH', 'Machine Chest Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C16', 'CH', 'Smith Machine Bench Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C17', 'CH', 'Hammer Strength Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C18', 'CH', 'Bench Press Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C19', 'CH', 'Chest Press Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C20', 'CH', 'Barbell Pullovers');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C21', 'CH', 'Dumbbell Pullovers');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C22', 'CH', 'Cross-Body Hammer Strength Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C23', 'CH', 'Machine Flyes');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C24', 'CH', 'Push-Up Variations');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('C25', 'CH', 'Chest Squeeze');
+
+
+
+-- Insert 25 shoulder workouts
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S1', 'SH', 'Seated Dumbbell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S2', 'SH', 'Military Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S3', 'SH', 'Arnold Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S4', 'SH', 'Front Raise');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S5', 'SH', 'Lateral Raise');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S6', 'SH', 'Bent Over Lateral Raise');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S7', 'SH', 'Upright Row');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S8', 'SH', 'Shrugs');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S9', 'SH', 'Push Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S10', 'SH', 'Reverse Fly');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S11', 'SH', 'Single-Arm Dumbbell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S12', 'SH', 'Lateral Raise Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S13', 'SH', 'Machine Shoulder Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S14', 'SH', 'Face Pulls');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S15', 'SH', 'High Pull');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S16', 'SH', 'Seated Arnold Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S17', 'SH', 'Cuban Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S18', 'SH', 'Clean and Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S19', 'SH', 'Behind-the-Neck Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S20', 'SH', 'Trap Raises');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S21', 'SH', 'Leaning Dumbbell Lateral Raise');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S22', 'SH', 'Kettlebell Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S23', 'SH', 'Smith Machine Overhead Press');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S24', 'SH', 'Machine Lateral Raise');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('S25', 'SH', 'Lateral Raise Cable');
+
+-- Insert 25 lat workouts
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L1', 'LT', 'Lat Pulldown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L2', 'LT', 'Pull-Ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L3', 'LT', 'Single-Arm Lat Pulldown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L4', 'LT', 'Bent-Over Rows');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L5', 'LT', 'Seated Cable Rows');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L6', 'LT', 'T-Bar Rows');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L7', 'LT', 'Straight-Arm Pulldown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L8', 'LT', 'Cable Face Pulls');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L9', 'LT', 'Lat Pushdowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L10', 'LT', 'Lat Shrugs');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L11', 'LT', 'Lat Stretch');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L12', 'LT', 'Wide-Grip Pulldowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L13', 'LT', 'Close-Grip Pulldowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L14', 'LT', 'Kneeling Lat Pulldown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L15', 'LT', 'Underhand Pulldowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L16', 'LT', 'V-Bar Pulldown');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L17', 'LT', 'Lat Pulldown Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L18', 'LT', 'Lat Pull Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L19', 'LT', 'Assisted Pull-Ups');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L20', 'LT', 'Bent-Over Cable Rows');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L21', 'LT', 'Rack Pulls');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L22', 'LT', 'Lat Rope Pull');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L23', 'LT', 'Lat Pull Machine');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L24', 'LT', 'Lat Pressdowns');
+INSERT INTO workouts (workout_id, part_id, name) VALUES ('L25', 'LT', 'Lat Pullover Machine');
+
+
+
+-- Insert Basic Membership Plans
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('BASIC1', 'Basic 1 Month', 1, 400.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('BASIC3', 'Basic 3 Months', 3, 1200.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('BASIC6', 'Basic 6 Months', 6, 2400.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('BASIC12', 'Basic 12 Months', 12, 5000.00);
+
+-- Insert Premium Membership Plans
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('PREMIUM1', 'Premium 1 Month', 1, 700.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('PREMIUM3', 'Premium 3 Months', 3, 2100.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('PREMIUM6', 'Premium 6 Months', 6, 4200.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('PREMIUM12', 'Premium 12 Months', 12, 8000.00);
+
+-- Insert Ultimate Membership Plans
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('ULTIMATE1', 'Ultimate 1 Month', 1, 1000.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('ULTIMATE3', 'Ultimate 3 Months', 3, 3000.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('ULTIMATE6', 'Ultimate 6 Months', 6, 6000.00);
+
+INSERT INTO Membership (membership_id, membership_name, period, amount)
+VALUES ('ULTIMATE12', 'Ultimate 12 Months', 12, 10000.00);
+
+
+
+CREATE TABLE PAYMENT (MEMBER_ID VARCHAR(10),PACK_ID VARCHAR(10),DUEDATE DATE,AMOUNT NUMBER(7,2),MODEOFPAY VARCHAR(15),DATEOFRENEWAL DATE,STATUS VARCHAR(15));
+
+
+
+<script>
+    const addWorkoutButton = document.getElementById('addWorkoutButton');
+    const workoutSelect = document.getElementById('workoutSelect');
+    const workoutTable = document.getElementById('workoutTable').getElementsByTagName('tbody')[0];
+
+    let selectedWorkouts = 0; // Track the number of selected workouts
+    const workoutData = []; // Array to store workout data
+
+    addWorkoutButton.addEventListener('click', () => {
+        if (selectedWorkouts < 10) {
+            /*const selectedWorkoutId = workoutSelect.value;
+            const selectedWorkoutName = workoutSelect.options[workoutSelect.selectedIndex].text;
+
+            const newRow = workoutTable.insertRow();
+            const dateCell = newRow.insertCell(0);
+            const exerciseCell = newRow.insertCell(1);
+            const setsCell = newRow.insertCell(2);
+            const repsCell = newRow.insertCell(3);
+            const removeCell = newRow.insertCell(4);
+
+            const currentDate = new Date().toLocaleDateString();
+            dateCell.innerHTML = currentDate;
+            exerciseCell.innerHTML = selectedWorkoutName;
+            setsCell.innerHTML = '3'; // Add code to input sets
+            repsCell.innerHTML = '15'; // Add code to input reps
+
+            // Calculate the rowIndex based on the current number of rows in the tbody
+            const rowIndex = workoutTable.rows.length - 1;
+
+            // Create and add the Remove button to the cell
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.setAttribute('data-row-index', rowIndex); // Set custom attribute
+            removeButton.addEventListener('click', () => {
+                const rowIndexToRemove = parseInt(removeButton.getAttribute('data-row-index'));
+                workoutTable.deleteRow(rowIndexToRemove); // Delete the row at the captured index
+                workoutData.splice(rowIndexToRemove, 1); // Remove corresponding workout data
+                selectedWorkouts--;
+
+                // Update the data-row-index attribute of remove buttons after deletion
+                const removeButtons = workoutTable.querySelectorAll('button[data-row-index]');
+                removeButtons.forEach((button, index) => {
+                    button.setAttribute('data-row-index', index);
+                });
+            });
+            removeCell.appendChild(removeButton);
+
+            workoutData.push(selectedWorkoutId); // Store workout data
+
+            selectedWorkouts++;
+        } else {
+            alert('You can only select a maximum of 10 workouts.');
+        }
+    });*/
+</script>
+
+
+SELECT * FROM attendance WHERE attendance_date >= TO_DATE(?, 'YYYY-MM-DD') AND attendance_date <= TO_DATE(?, 'YYYY-MM-DD') 
+SELECT * FROM attendance WHERE attendance_date >= TO_DATE('2023-08-20', 'YYYY-MM-DD') AND attendance_date <= TO_DATE('2023-08-21', 'YYYY-MM-DD')and out_Time = null;
+
+DELETE FROM user_session WHERE user_id = '1493' AND workout_id = 'A1' AND status='LIVE';
+
+
+
+
+
+
+TRIGGERS
+---------
+
+CREATE TRIGGER SessionStart 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html><!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titan Forge Fitness</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+a
+{
+    text-decoration: none;
+    color: red;
+    font-size: 4rem;
+}
+
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about .image img {
+  width: 50%;
+}
+
+.about .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about .image h3 {
+  color: #130f40;
+  font-size: 4rem;
+}
+
+.about .image h3 span {
+  color: green;
+}
+
+.about .image p {
+  font-size: 1.6rem;
+  color: #666;
+  padding: 1rem 0;
+  line-height: 2;
+}
+.about .content .login-form.active {
+  display: block;
+  -webkit-animation: fadeIn .4s linear;
+          animation: fadeIn .4s linear;
+}
+
+.about .content .login-form h3 {
+  color: #130f40;
+  font-size: 2.5rem;
+  padding-bottom: .5rem;
+}
+
+.about .content .login-form .box {
+  width: 100%;
+  border-bottom: 0.2rem solid #130f40;
+  border-width: .1rem;
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
+  color: #130f40;
+  text-transform: none;
+  margin: 1rem 0;
+}
+
+
+
+
+.about .content .login-form .btn {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.about .content .login-form .btn:hover {
+  background: #130f40;
+}
+
+</style>
+</head>
+<body>
+    <div class="full-page">
+  
+            <div>
+                <center>  <h1><a>Titan Forge Fitness</a></h1></center>
+            </div>
+<BR>
+   
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="images/reg.jpg" alt="">
+        <h3>"Greetings, New Champion! Prepare for an epic fitness journey that will transform you."</h3><BR>
+    </div>
+<div class="content">
+    
+   <form action="RegisterServlet" id='register' class="login-form" method="post">
+        <input type='text' class="box" placeholder='Member ID' name="memid" id="memid" required>
+        <input type='text' class="box" placeholder='Username' name="name" id="username" required>
+        <input type="number" class="box" placeholder='Age' id="age" name="age" min="0" max="150" step="1">
+        <input type="number" class="box" placeholder='Height' id="height" name="height" min="0" max="300" step="0.1">
+        <input type="number" class="box" placeholder='Weight' id="weight" name="weight" min="0" max="500" step="0.1">
+        <input type='text' class="box" placeholder='Phone ' name="phone" required>
+        <textarea  class="box" id="address" name="address" rows="2" cols="45" placeholder='Address 'required></textarea>
+        <input type='email' class="box" placeholder='Email Id' name="email" id="email" required>
+        <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+        <input type="submit" value="sign up" class="btn" onclick="valid()">
+    </form>
+        
+</div>
+    <BR><BR>
+     
+</section>
+ 
+<!-- about section ends -->
+</body>
+</html>
+

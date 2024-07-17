@@ -1,0 +1,19 @@
+Basic Database error 
+	1)Start the Database service (net start oracleserviceXe)
+	2)Listener control error (in cmd admin mode "lsnrctl start")
+
+Server error:
+
+	1)uninstall and reinstall server( delete the servlet project and create new project)
+
+Path for files::
+
+1)WEB:
+	1)Html,css,js,jsp
+
+2)Source
+	1)Java CLass,Servlets,DB connection codes (BAsically programs)
+
+3)Library
+		
+	1)Jdks,Servers,Ojdbc(jar files)
